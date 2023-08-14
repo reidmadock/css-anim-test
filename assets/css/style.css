@@ -28,6 +28,7 @@ body {
     margin: 0rem;
 }
 
+/* Nav bar related style */
 nav {
   margin: 0rem;
   padding: 0rem;
@@ -41,11 +42,58 @@ nav ul {
 }
 
 nav ul li {
-  /* display: inline-block; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   list-style: none;
   font-size: 2rem;
+  cursor: pointer;
 }
 
+nav ul li:hover > .line {
+  width: 105%;
+}
+
+a.nav-link:link {
+  text-decoration: none;
+}
+
+a.nav-link:visited {
+  text-decoration: none;
+}
+
+a.nav-link:hover {
+  text-decoration: none;
+}
+
+a.nav-link:active {
+  text-decoration: none;
+}
+
+nav ul li:hover > .bar-anim-1 {
+  /* width: 105%; */
+  opacity: 1;
+  transform: translate(0,0);
+}
+
+.line {
+  height: .15rem;
+  width: 0%;
+  transition:
+    width 150ms,
+    height 150ms;
+}
+
+.bar-anim-1 {
+  width: 100%;
+  transform: translate(0%, .2rem);
+  opacity: 0;
+  transition: 
+    opacity 150ms,
+    transform 100ms;
+}
+
+/* Centered container */
 .center {
   position: absolute;
   top: 50vh;
@@ -53,19 +101,20 @@ nav ul li {
   transform: translate(-50%, -50%);
 }
 
+/* Square definition */
 .square {
   width: 8rem;
   height: 8rem;
   border-radius: 1rem;
   display: inline-block;
+  transition: 
+    transform .3s,
+    rotate 2s;
 }
 
+/* Square sub definitions */
 .left-sq {
   margin-bottom: 0rem;
-  /* Shift down */
-  /* transform: translate(0%, 20%); */
-  /* Shift up */
-  transform: translate(0%, -20%);
 }
 
 .mid-sq {
@@ -76,18 +125,39 @@ nav ul li {
   margin-bottom: 0rem;
 }
 
-.col-1 {
+/* Square hover effects */
+.left-sq:hover {
+  /* transform: rotateZ(90deg) translate(-20%, 0%); */
+  transform: translate(0%, -20%);
+}
+
+/* Text color classes */
+.txt-clr-1 {
+  color: var(--primary-cerulean);
+}
+
+.txt-clr-2 {
+  color: var(--primary-verdigris);
+}
+
+.txt-clr-3 {
+  color: var(--accent-brightpink);
+}
+
+/* Background color classes */
+.bg-clr-1 {
   background-color: var(--primary-cerulean);
 }
 
-.col-2 {
+.bg-clr-2 {
   background-color: var(--primary-verdigris);
 }
 
-.col-3 {
+.bg-clr-3 {
   background-color: var(--accent-brightpink);
 }
 
+/* Class settings */
 .not-active {
   visibility: hidden;
 }
